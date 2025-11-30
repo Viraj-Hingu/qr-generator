@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Message</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .box {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f4f4f4;
+            border-radius: 10px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Your Message:</h2>
+
+    <div class="box" id="output">Loading...</div>
+
+    <script>
+        let params = new URLSearchParams(window.location.search);
+        let text = params.get("data");
+
+        if (text) {
+            document.getElementById("output").innerText = decodeURIComponent(text);
+        } else {
+            document.getElementById("output").innerText = "No data found!";
+        }
+    </script>
+
+</body>
+
+</html>
